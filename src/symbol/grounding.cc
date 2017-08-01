@@ -70,7 +70,8 @@ Grounding( const std::map< std::string, std::string >& stringProperties,
 
 Grounding::
 ~Grounding() {
-
+  _string_properties.clear();
+  _int_properties.clear();
 }
 
 Grounding::
