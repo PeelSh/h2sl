@@ -382,6 +382,7 @@ pygx( const string& cv,
   vector< unsigned int > indices;
   vector< Feature* > features;
   vector< bool > evaluate_feature_types = evaluateFeatureTypes;
+  cout << "BEGIN LLM.pygx"
   for( unsigned int i = 0; i < cvs.size(); i++ ){
     if( i != 0 ){
       evaluate_feature_types[ FEATURE_TYPE_LANGUAGE ] = false;
@@ -398,7 +399,7 @@ pygx( const string& cv,
     }
     denominator += dp;
   }
-  cout << "LLM-pygx: " << numerator << " / " << denominator << endl;
+  cout << "END LLM-pygx: " << numerator << " / " << denominator << endl;
   return ( numerator / denominator );
 }
 
@@ -506,7 +507,7 @@ from_xml( xmlNodePtr root ){
       boost::split( weights_strings, weights_string, boost::is_any_of( "," ) );
       _weights.resize( weights_strings.size() );
       for( unsigned int i = 0; i < weights_strings.size(); i++ ){
-        _weights[ i ] = strtof( weights_strings[ i ].c_str(), NULL );
+        _weights[ i ] = strtof( weights_strings[ i ].c_str(), NULL );/
       }
       xmlFree( tmp );
     }   
