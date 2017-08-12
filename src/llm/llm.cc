@@ -398,6 +398,7 @@ pygx( const string& cv,
     }
     denominator += dp;
   }
+  cout << "LLM-pygx: " << numerator << " / " << denominator << endl;
   return ( numerator / denominator );
 }
 
